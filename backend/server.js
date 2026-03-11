@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/api", (req, res) => {
-    res.json({ message: "Backend running" });
+    res.json({ message: "Backend Running" });
 });
 
 const PORT = 3000;

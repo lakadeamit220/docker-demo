@@ -1,10 +1,19 @@
+import { useEffect, useState } from "react";
+
 function App() {
+  const [data, setData] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api")
+      .then(res => res.json())
+      .then(data => setData(data.message));
+  }, []);
 
   return (
-    <>
-      <h1 className="text-center">Docker Demo</h1>
-    </>
-  )
+    <div className="flex items-center justify-center h-screen text-2xl">
+      {data}
+    </div>
+  );
 }
 
-export default App
+export default App;
